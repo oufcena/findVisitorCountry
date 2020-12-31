@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function welcome() {
+  var data = async() => {
+    var result = await fetch('https://gomakethings.com/checkout/wp-json/gmt-pricing-parity/v1/discount/').then(
+      response => response.json()
+    );
+    document.body.innerHTML = `
+    <h1 style="text-align:center">Greetings & Salutations to 
+    <mark>${result.country}</mark></h1>
+    <img alt="flag" style="width:100%"
+    src="https://flagpedia.net/data/flags/normal/${result.code}.png">
+    `;
+  }; data();
+} welcome();
+</script>
+</body>
+</html>
